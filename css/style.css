@@ -1,0 +1,495 @@
+@charset 'utf-8';
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: 'Binggrae-Two';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'S-CoreDream-3Light';
+  --size: 16px;
+  background-color: #fff9f9;
+}
+
+.wrap {
+  overflow: hidden;
+}
+.wrap > * {
+  max-width: 1400px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+/* header 영역 */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+}
+header h1 {
+  font-family: 'Binggrae-Two';
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%;
+  flex: 1;
+  text-align: center;
+}
+header a {
+  border: 1px solid #888;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 14px;
+  text-align: center;
+  line-height: 120%;
+  color: #888;
+  transition: 0.3s;
+}
+header a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+/* section.main 영역 */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  position: relative;
+}
+.main h2 {
+  font-family: 'Binggrae-Two';
+  font-size: 30px;
+  padding: 2rem 0;
+}
+.main .info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.main .info li {
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 290px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+.main .info li:hover {
+  transform: translateY(-20px);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.main .info li p {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 150%;
+}
+.main .info li a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.main .smartLB {
+  gap: 1rem;
+}
+.main .smartLB img {
+  scale: 1.5;
+}
+.main::after {
+  content: '';
+  display: block;
+  background-image: url(../img/img_1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 32vw;
+}
+
+/* section.search 영역 */
+.search {
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  background-color: white;
+  border-radius: 100px;
+}
+.search .smart_library {
+  font-size: 14px;
+  outline: none;
+  padding: 0.5rem;
+}
+.search .searchInput {
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 30%;
+  font-size: 18px;
+}
+.search .searchBtn {
+  font-size: 24px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* section.list 영역 */
+.list {
+  position: relative;
+}
+.list .btns {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.list .btns button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
+  padding: 1rem;
+  margin-right: 1rem;
+  transition: 0.3s;
+}
+.list .btns button::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: salmon;
+  transform: translate(35px, 10px);
+  opacity: 0;
+  transition: 0.3s;
+}
+.list .btns button:hover,
+.list .btns button:focus {
+  color: black;
+}
+.list .btns button:hover::after,
+.list .btns button:focus::after {
+  opacity: 1;
+}
+.list .bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: 1rem;
+}
+.list .bookList > li {
+  line-height: 2em;
+  position: relative;
+  padding: 0.5rem;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.list .bookList img {
+  border: 3px solid #eaeaea;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.list .bookList > li:hover {
+  transform: scale(0.9);
+}
+.list .bookList p {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em 0;
+}
+.list .bookList > li > a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: transparent;
+}
+.list .pgcon {
+  display: flex;
+  justify-content: center;
+  gap: var(--size);
+  padding: calc(var(--size) * 2) 0;
+}
+.list .pgcon button {
+  border: none;
+  outline: none;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* modal 영역 */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  z-index: 50;
+}
+.bookCon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 4rem;
+  border-radius: 50px;
+  width: 800px;
+  font-size: 20px;
+  z-index: 100;
+}
+.bookCon .bookInfo {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.bookCon .bookInfo img {
+  border: 3px solid #eaeaea;
+  width: 250px;
+  object-fit: cover;
+}
+.bookCon p {
+  padding: 1rem 0;
+}
+.bookCon strong {
+  display: inline-block;
+  font-weight: bold;
+}
+.bookData {
+  line-height: 150%;
+}
+.bookData h3 {
+  font-family: 'Binggrae-Two';
+  font-size: 28px;
+  line-height: 150%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.bookData p:nth-of-type(1) {
+  background-color: #f8e0ec;
+  padding: 0.5rem 1rem;
+}
+.closeBtn {
+  position: fixed;
+  right: -50px;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 32px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+/* footer 영역 */
+footer {
+  border-top: 1px solid black;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ham {
+  display: none;
+}
+
+.scrollLock {
+  overflow: hidden;
+}
+
+@media (max-width: 950px) {
+  .ham {
+    display: block;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+  }
+  .ham:hover {
+    transform: scale(1.5);
+  }
+  header a,
+  .main .info {
+    display: none;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+  header a.on,
+  .main .info.on {
+    display: block;
+  }
+  header.on {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+  header.on h1,
+  header.on a {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+  header.on h1 {
+    top: 15%;
+  }
+  header.on a {
+    top: 25%;
+    width: 80%;
+  }
+  .main h2 {
+    font-size: 20px;
+    line-height: 150%;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .main span {
+    font-size: 14px;
+    line-height: 120%;
+    display: inline-block;
+    text-align: center;
+  }
+  .main .info {
+    position: fixed;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+  .main .info li {
+    width: 80vw;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .main .info li:hover {
+    transform: translateY(0);
+  }
+  .search {
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+  }
+  .search .smart_library {
+    font-size: 12px;
+    padding: 5px 0;
+    margin-top: 2rem;
+  }
+  .search .searchInput {
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: white;
+    width: 70%;
+    font-size: 16px;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .list .bookList {
+    grid-template-columns: repeat(2, minmax(100%, 1fr));
+    gap: 1rem;
+  }
+  .list .bookList img {
+    height: 100%;
+  }
+  .list .btns {
+    margin-bottom: 0;
+  }
+  .bookCon {
+    padding: 3rem;
+    width: 70%;
+    font-size: 18px;
+  }
+  .bookCon .bookInfo {
+    display: block;
+  }
+  .bookCon .bookInfo img {
+    width: 200px;
+  }
+  .bookCon p {
+    padding: 0.5rem 0;
+  }
+  .bookData {
+    margin-top: 1rem;
+  }
+  .bookData h3 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  .closeBtn {
+    top: 0;
+  }
+}
+
+@media (max-width: 403px) {
+  header {
+    padding-left: 0;
+  }
+  header.on h1 {
+    width: 80%;
+  }
+  .main {
+    margin-bottom: 1.5rem;
+  }
+  .main .textArea {
+    text-align: center;
+  }
+  .main .info li img {
+    display: none;
+  }
+  .main::after {
+    display: none;
+  }
+  .search {
+    width: 100%;
+  }
+  .search .searchInput {
+    font-size: 12px;
+  }
+}
