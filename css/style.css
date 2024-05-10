@@ -208,7 +208,7 @@ header a:hover {
 .list .bookList img {
   border: 3px solid #eaeaea;
   width: 100%;
-  height: 360px;
+  height: 400px;
   object-fit: cover;
   border-radius: 1rem;
   overflow: hidden;
