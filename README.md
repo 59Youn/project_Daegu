@@ -2,7 +2,7 @@
 
 > 대구광역시\_스마트도서관 도서검색서비스 API를 활용한 세미 프로젝트
 
-![README_대구동네도서관](/img/README_대구동네도서관.jpg)
+![README_대구동네도서관](![README_대구동네도서관](https://github.com/59Youn/project_Daegu/assets/162939328/a769e1be-3d58-421f-838f-3c9d3a265a80))
 
 > #### 진행기간 : 24.04.18 ~ 24.04.28
 >
